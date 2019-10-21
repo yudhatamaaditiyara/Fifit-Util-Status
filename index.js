@@ -35,7 +35,7 @@ status.entries = Object.entries(status.codes);
  */
 status.messages = status.entries.reduce((messages, entry) => {
 	const code = entry[0];
-	const message = status.codes[code];
+	const message = entry[1];
 	messages[message.toLowerCase()] = code;
 	messages[message] = code;
 	return messages;
@@ -45,8 +45,7 @@ status.messages = status.entries.reduce((messages, entry) => {
  * @var Object
  */
 status.identifiers = status.entries.reduce((identifiers, entry) => {
-	const code = entry[0];
-	identifiers[code] = status.codes[code].replace(/\s+/g, '').replace(/[^a-zA-Z0-9]/g, '');
+	identifiers[entry[0]] = entry[1].replace(/\s+/g, '').replace(/[^a-zA-Z0-9]/g, '');
 	return identifiers;
 },{});
 
