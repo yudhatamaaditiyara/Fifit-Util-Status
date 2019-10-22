@@ -16,22 +16,22 @@
 'use strict';
 
 /**
- * @var Object
+ * @var {Object}
  */
 const status = {};
 
 /**
- * @var Object
+ * @var {Object}
  */
 status.codes = require('./codes.json');
 
 /**
- * @var Object
+ * @var {Object}
  */
 status.entries = Object.entries(status.codes);
 
 /**
- * @var Object
+ * @var {Object}
  */
 status.messages = status.entries.reduce((messages, entry) => {
 	const code = entry[0];
@@ -42,7 +42,7 @@ status.messages = status.entries.reduce((messages, entry) => {
 },{});
 
 /**
- * @var Object
+ * @var {Object}
  */
 status.identifiers = status.entries.reduce((identifiers, entry) => {
 	identifiers[entry[0]] = entry[1].replace(/\s+/g, '').replace(/[^a-zA-Z0-9]/g, '');
