@@ -18,7 +18,7 @@ const status = require('../../');
 
 /**
  */
-describe('status', () => {
+describe('index', () => {
 	/**
 	 */
 	it('typeof(status.codes) === "object"', () => {
