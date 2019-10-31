@@ -22,7 +22,7 @@ describe('index', () => {
 	/**
 	 */
 	it('typeof(status.codes) === "object"', () => {
-		assert.ok(status.codes != null && typeof status.codes == 'object');
+		assert.ok(status.codes !== null && typeof status.codes == 'object');
 	});
 
 	/**
@@ -34,13 +34,13 @@ describe('index', () => {
 	/**
 	 */
 	it('typeof(status.messages) === "object"', () => {
-		assert.ok(status.messages != null && typeof status.messages == 'object');
+		assert.ok(status.messages !== null && typeof status.messages == 'object');
 	});
 
 	/**
 	 */
 	it('typeof(status.identifiers) === "object"', () => {
-		assert.ok(status.identifiers != null && typeof status.identifiers == 'object');
+		assert.ok(status.identifiers !== null && typeof status.identifiers == 'object');
 	});
 
 	/**
@@ -81,7 +81,7 @@ describe('index', () => {
 
 	/**
 	 */
-	it('for in ...status.codes', () => {
+	it('status.codes', () => {
 		for (var code in status.codes) {
 			assert.ok(/^[0-9]+$/.test(code));
 			assert.ok(typeof status.codes[code] === 'string');
@@ -90,7 +90,7 @@ describe('index', () => {
 
 	/**
 	 */
-	it('for of ...status.entries', () => {
+	it('status.entries', () => {
 		for (var entry of status.entries) {
 			assert.ok(/^[0-9]+$/.test(entry[0]));
 			assert.ok(typeof entry[1] === 'string');
@@ -99,7 +99,7 @@ describe('index', () => {
 
 	/**
 	 */
-	it('for in ...status.messages', () => {
+	it('status.messages', () => {
 		for (var message in status.messages) {
 			assert.ok(/^[0-9]+$/.test(status.messages[message]));
 			assert.ok(typeof message === 'string');
@@ -108,7 +108,7 @@ describe('index', () => {
 
 	/**
 	 */
-	it('for in ...status.identifiers', () => {
+	it('status.identifiers', () => {
 		for (var code in status.identifiers) {
 			assert.ok(/^[0-9]+$/.test(code));
 			assert.ok(/^[a-zA-Z0-9]+$/.test(status.identifiers[code]));
