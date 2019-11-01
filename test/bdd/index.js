@@ -250,7 +250,7 @@ describe('index', () => {
 	it('status.entries', () => {
 		assert.ok(status.entries.length > 0);
 		for (var entry of status.entries) {
-			assert.ok(/^[0-9]+$/.test(entry[0]));
+			assert.ok(/^[0-9]+$/.test(String(entry[0])));
 			assert.ok(typeof entry[1] === 'string');
 		}
 	});
@@ -260,7 +260,8 @@ describe('index', () => {
 	it('status.messages', () => {
 		assert.ok(Object.keys(status.messages).length > 0);
 		for (var message in status.messages) {
-			assert.ok(/^[0-9]+$/.test(status.messages[message]));
+			let code = String(status.messages[message]);
+			assert.ok(/^[0-9]+$/.test(code));
 			assert.ok(typeof message === 'string');
 		}
 	});
